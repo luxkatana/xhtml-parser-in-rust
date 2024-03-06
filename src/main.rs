@@ -23,7 +23,13 @@ fn main() {
     }
     for (lineno, (begin, attributes, text, end)) in tags.into_iter().enumerate() {
         let lineno = lineno + 1;
-        println!("{lineno} <{begin}{attributes}>{text}</{end}>");
+        // println!("{lineno} <{begin}{attributes}>{text}</{end}>");
+        println!(r#"
+{lineno}:
+    begin: {begin}
+    attributes: {attributes}
+    end: {end}
+    text: "{text}""#);
     }
 
 
